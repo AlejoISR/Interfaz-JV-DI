@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="com.example.altum.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.altum.MainController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelTitle" text="Calculadora" focusTraversable="true">
+            <Label fx:id="labelTitle" focusTraversable="true" text="Calculadora">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -21,7 +21,8 @@
             <TextField fx:id="textfieldNumber1" promptText="Número 1" />
             <TextField fx:id="textfieldNumber2" promptText="Número 2" />
             <ComboBox fx:id="comboboxOperation" prefWidth="200.0" promptText="Selecciona una ópcion " />
-            <Button fx:id="buttonCalculate" mnemonicParsing="false" text="Calcular" />
+            <Button fx:id="buttonCalculate" disable="true" mnemonicParsing="false" text="Calcular" />
+            <Label fx:id="labelResult" text="Label" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
