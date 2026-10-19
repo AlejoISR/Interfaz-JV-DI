@@ -11,15 +11,16 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    @FXML  private Label labelTitle;
-    @FXML private TextField textfieldNumber1;
-    @FXML private TextField textfieldNumber2;
+    @FXML private Label labelTitle;
+    @FXML private TextField textfieldNumber1, textfieldNumber2;
     @FXML private ComboBox<String> comboboxOperation;
     @FXML private Button buttonCalculate;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        labelTitle.requestFocus();
+        comboboxOperation.getItems().addAll("Sumar","Resat","Multiplicar","Dividir");
 
     }
 }
