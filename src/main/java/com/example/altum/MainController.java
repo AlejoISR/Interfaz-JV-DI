@@ -7,6 +7,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+
+import java.lang.classfile.Opcode;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,7 +17,7 @@ public class MainController implements Initializable {
     @FXML private Label labelResult;
     @FXML private Label labelTitle;
     @FXML private TextField textfieldNumber1, textfieldNumber2;
-    @FXML private ComboBox<String> comboboxOperation;
+    @FXML private ComboBox<Option> comboboxOperation;
     @FXML private Button buttonCalculate;
 
 
@@ -36,10 +38,16 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Option optionAdd  = new Option("add","Sumar");
+        Option optionSubtract  = new Option("substract","Restar");
+        Option optionMultiply  = new Option("multiply", "Multiplicar");
+        Option optionDivide = new Option("divide","Divide");
+
+
+
         labelTitle.requestFocus();
-        comboboxOperation.getItems().addAll("Sumar","Restar","Multiplicar","Dividir");
-
-
+        comboboxOperation.getItems().addAll(optionAdd,optionSubtract,optionMultiply,optionDivide);
 
         // Escuchadores pendientes de cambio
 
@@ -51,13 +59,13 @@ public class MainController implements Initializable {
 
             int numero1 = Integer.parseInt(textfieldNumber1.getText());
             int numero2 = Integer.parseInt(textfieldNumber2.getText());
-            String operacion = comboboxOperation.getValue();
+            String operacion = comboboxOperation.getValue().getKey();
 
             int resueltado = switch (operacion){
-              case "Sumar"   -> numero1+numero2;
-              case "Restar" -> numero1-numero2;
-              case "Multiplicar" -> numero1*numero2;
-              case "Dividir" -> numero1/numero2;
+              case "add"   -> numero1+numero2;
+              case "substract" -> numero1-numero2;
+              case "multiply" -> numero1*numero2;
+              case "divide" -> numero1/numero2;
                 default -> 0;
             };
 
