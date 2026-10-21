@@ -8,8 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import javax.swing.text.MaskFormatter;
 import java.lang.classfile.Opcode;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -19,9 +21,6 @@ public class MainController implements Initializable {
     @FXML private TextField textfieldNumber1, textfieldNumber2;
     @FXML private ComboBox<Option> comboboxOperation;
     @FXML private Button buttonCalculate;
-
-    //
-    private  ResourceBundle bundle;
 
 
     private void checkValues(){
@@ -39,13 +38,17 @@ public class MainController implements Initializable {
         buttonCalculate.setDisable(!(validCombo && validTexfield));
     }
 
+
+    private  ResourceBundle bundle;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.bundle = resourceBundle;
 
-        Option optionAdd  = new Option("add","Sumar");
-        Option optionSubtract  = new Option("substract","Restar");
-        Option optionMultiply  = new Option("multiply", "Multiplicar");
-        Option optionDivide = new Option("divide","Divide");
+        Option optionAdd       = new Option("add",               bundle.getString("option.add"));
+        Option optionSubtract  = new Option("substract",         bundle.getString("option.substract"));
+        Option optionMultiply  = new Option("multiply",      bundle.getString("option.multiply"));
+        Option optionDivide    = new Option("divide",          bundle.getString("option.divide"));
 
 
 
@@ -72,7 +75,7 @@ public class MainController implements Initializable {
                 default -> 0;
             };
 
-            labelResult.setText(String.valueOf(resueltado));
+            labelResult.setText(MessageFormat.format(bundle.getString("label.result"),resueltado));
         });
     }
 }
