@@ -1,5 +1,7 @@
 package com.example.altum;
 
+import atlantafx.base.theme.PrimerDark;
+import atlantafx.base.theme.Theme;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,6 +14,11 @@ import java.util.ResourceBundle;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+
+        //Sets the thema
+
+        Theme theme = new PrimerDark();
+        Application.setUserAgentStylesheet(theme.getUserAgentStylesheet());
 
         Locale locale = Locale.forLanguageTag("en-EN");
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages",locale);
