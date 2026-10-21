@@ -20,6 +20,9 @@ public class MainController implements Initializable {
     @FXML private ComboBox<Option> comboboxOperation;
     @FXML private Button buttonCalculate;
 
+    //
+    private  ResourceBundle bundle;
+
 
     private void checkValues(){
         boolean validCombo = comboboxOperation.getValue() !=null;
