@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.altum.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.altum.MainController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
@@ -18,14 +18,17 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="textfieldNumber1" promptText="%textfield.number1"/>
+            <TextField fx:id="textfieldNumber1" promptText="%textfield.number1" />
             <TextField fx:id="textfieldNumber2" promptText="%textfield.number2" />
             <ComboBox fx:id="comboboxOperation" prefWidth="200.0" promptText="%combobox.operation" />
             <Button fx:id="buttonCalculate" disable="true" mnemonicParsing="false" text="%button.calculate" />
-            <Label fx:id="labelResult" text="Label" />
+            <Label fx:id="labelResult" text="" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding></VBox>
    </center>
+   <bottom>
+      <ComboBox fx:id="comboBoxTheme" prefWidth="150.0" promptText="%combobox.theme" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>
